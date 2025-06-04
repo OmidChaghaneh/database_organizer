@@ -1,4 +1,4 @@
-# Data Organization Tool
+# Database Organization Tool
 
 A Python utility for organizing data into a structured directory hierarchy with comprehensive logging capabilities. This tool helps maintain a consistent and organized data structure for medical imaging and research data.
 
@@ -33,8 +33,8 @@ data/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/OmidChaghaneh/database_organizer.git
-cd database_organizer
+git clone https://github.com/OmidChaghaneh/database-organization-tool.git
+cd database-organization-tool
 ```
 
 2. No additional installation steps required as the tool uses only Python standard library.
