@@ -1,72 +1,89 @@
-# Database Organization Tool
+# Database Organizer
 
-A Python utility for organizing data into a structured directory hierarchy with comprehensive logging capabilities. This tool helps maintain a consistent and organized data structure for medical imaging and research data.
+A Python tool for organizing database files in a structured way.
 
-## Features
+## Project Structure
 
-- Creates a hierarchical directory structure based on specified parameters
-- Supports custom acquisition lines, visit IDs, and exam IDs
-- Includes comprehensive logging functionality with timestamps
-- Copies contents from a source directory to the target structure
-- Maintains clean directory state by clearing existing contents before copying
-- Automatic log file management with timestamps
-
-## Directory Structure
-
-The tool creates the following structure:
 ```
-data/
-└── [folder_name]/           # e.g., 'raw' or 'extracted'
-    └── [acquisition_line]/  # e.g., 'bowl'
-        └── [visit_id]/      # e.g., '182823488'
-            └── [exam_id]/   # e.g., '3'
-                └── [copied contents]
+database/
+├── src/
+│   ├── database_organizer/
+│   │   ├── __init__.py
+│   │   ├── logger.py
+│   │   └── organizer.py
+│   └── main.py
+├── data/
+├── logs/
+├── sample_data/
+├── setup.py
+└── README.md
 ```
-
-## Requirements
-
-- Python 3.6 or higher
-- No external dependencies required
-- Git (for version control)
 
 ## Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/OmidChaghaneh/database-organization-tool.git
-cd database-organization-tool
+git clone <repository-url>
+cd database
 ```
 
-2. No additional installation steps required as the tool uses only Python standard library.
+2. Install the package in development mode:
+```bash
+pip install -e .
+```
 
 ## Usage
 
-1. Place your source data in a folder named `sample_data`
-2. Run the script:
-```bash
-python organize_data.py
-```
-
-## Configuration
-
-You can modify the following parameters in the `main()` function of `organize_data.py`:
+The package provides a `DataOrganizer` class that helps create and manage a structured directory hierarchy for your data. Here's a basic example:
 
 ```python
-# Example configuration
-base_path = "data"           # Root directory for the structure
-folder_name = "extracted"    # Main folder name (e.g., 'raw' or 'extracted')
-acquisition_line = "bowl"    # The acquisition line identifier
-visit_id = "182823488"      # The visit identifier
-exam_id = 3                 # The exam identifier
-source_path = "sample_data" # Path to the source folder
+from database_organizer import DataOrganizer, setup_logging
+
+# Set up logging
+logger = setup_logging()
+
+# Initialize the organizer
+organizer = DataOrganizer("data")
+
+# Create directory structure and copy files
+success = organizer.create_structure(
+    acquisition_line="bowl",
+    visit_id="182823488",
+    exam_id=3,
+    folder_name="raw",
+    source_path="sample_data"
+)
 ```
 
-## Logging
+## Directory Structure
 
-- Logs are stored in the `logs` directory
-- Each run creates a new log file with timestamp: `run_YYYY-MM-DD_HH-MM-SS.log`
-- Log files include:
-  - Directory creation operations
-  - File copying operations
-  - Error messages and exceptions
-  - Operation timestamps
+The tool creates the following directory structure:
+
+```
+data/
+└── raw/
+    └── bowl/
+        └── 182823488/
+            └── 3/
+                └── [your files here]
+```
+
+## Features
+
+- Creates a hierarchical directory structure
+- Copies source files to the target location
+- Comprehensive logging
+- Error handling and validation
+- Clean and maintainable code structure
+
+## Development
+
+The project is organized into the following modules:
+
+- `database_organizer/logger.py`: Handles logging configuration
+- `database_organizer/organizer.py`: Contains the main `DataOrganizer` class
+- `main.py`: Example usage of the package
+
+## License
+
+[Your chosen license]
