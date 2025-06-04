@@ -2,6 +2,11 @@
 
 A Python tool for organizing database files in a structured way.
 
+## Requirements
+
+- Python >= 3.6
+- pip (Python package installer)
+
 ## Project Structure
 
 ```
@@ -23,7 +28,7 @@ database/
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/yourusername/database.git
 cd database
 ```
 
@@ -86,4 +91,4 @@ The project is organized into the following modules:
 
 ## License
 
-[Your chosen license]
+This project is licensed under the MIT License - see the LICENSE file for details.
