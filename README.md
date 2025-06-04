@@ -67,39 +67,3 @@ data/
             └── 3/         # Exam ID
                 └── [your files here]
 ```
-
-## Features
-
-- **Hierarchical Directory Creation**
-  - Creates nested directory structure based on acquisition line, visit ID, and exam ID
-  - Supports multiple folder types (e.g., raw, processed)
-  - Handles existing directories gracefully
-
-- **File Management**
-  - Optional source directory copying
-  - Cleans target directory before copying new files
-  - Preserves file metadata during copy operations
-  - Supports both single files and directory copying
-
-- **Robust Error Handling**
-  - Validates source and destination paths
-  - Handles file system errors gracefully
-  - Provides detailed error logging
-
-- **Comprehensive Logging**
-  - Detailed operation logging
-  - File and directory operation tracking
-  - Error and exception logging
-  - Operation verification logging
-
-## Development
-
-The project is organized into the following modules:
-
-- `database_organizer/logger.py`: Configures and manages application logging
-- `database_organizer/organizer.py`: Implements the main `DataOrganizer` class with all core functionality
-- `main.py`: Provides example usage and can serve as an entry point
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
