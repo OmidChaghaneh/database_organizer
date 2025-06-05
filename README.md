@@ -2,18 +2,6 @@
 
 A Python tool for organizing database files in a structured way and tracking metadata in an Excel file.
 
-## Features
-
-- **Structured Directory Creation:**
-  - Automatically creates a nested directory structure for your data based on acquisition line, visit ID, exam ID, and folder type (e.g., raw, extracted).
-- **Metadata Tracking in Excel:**
-  - Each time you add a new sample, the tool records its metadata (acquisition_line, visit_id, exam_id, timestamp) in an Excel file (`metadata.xlsx`) in the base data directory.
-  - Prevents duplicate entries: If a row with the same acquisition_line, visit_id, and exam_id already exists, no new row is added (timestamp is ignored for duplicate checking).
-  - Robust to column name typos (e.g., handles both `acquisition_line` and `quisition_li` in existing files).
-  - Normalizes data types and strips whitespace to ensure reliable duplicate detection.
-- **Logging:**
-  - Logs all operations and errors to both the console and a log file in the `logs/` directory.
-
 ## Requirements
 
 - Python >= 3.6
@@ -105,7 +93,6 @@ data/
 - The file `metadata.xlsx` is created in your base data directory (e.g., `data/`).
 - Each row contains: `timestamp`, `acquisition_line`, `visit_id`, `exam_id`.
 - If you try to add the same sample (same acquisition_line, visit_id, exam_id) again, no duplicate row will be added.
-- The tool is robust to column name typos and data formatting issues in the Excel file.
 
 ---
 
