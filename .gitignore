@@ -32,6 +32,7 @@ sample_data/
 venv/
 env/
 ENV/
+.venv/
 
 # IDE
 .idea/

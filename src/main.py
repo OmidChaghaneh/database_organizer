@@ -13,7 +13,7 @@ def main():
     folder_name = "raw"        # The folder name to create
     acquisition_line = "bowl"  # The acquisition line to create
     visit_id = "182823488"     # The visit ID
-    exam_id = 3                # The exam ID
+    exam_id = 2                # The exam ID
     source_path = "sample_data"  # Path to source folder to copy
     
     # Check if source path exists before proceeding
