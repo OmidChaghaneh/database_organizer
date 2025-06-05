@@ -1,11 +1,10 @@
 # Database Organizer
 
-A Python tool for organizing database files in a structured way, with support for hierarchical directory creation and file management.
+A Python tool for organizing database files in a structured way.
 
 ## Requirements
 
 - Python >= 3.6
-- pip (Python package installer)
 
 ## Project Structure
 
@@ -30,6 +29,7 @@ database/
 ```bash
 git clone https://github.com/yourusername/database.git
 cd database
+python main.py
 ```
 
 ## Usage
@@ -47,10 +47,10 @@ organizer = DataOrganizer("data")
 
 # Create directory structure and copy files
 success = organizer.create_structure(
-    acquisition_line="bowl",      # e.g., "bowl", "linear", etc.
+    acquisition_line="bowl",      # e.g., "bowl", etc.
     visit_id="182823488",         # Unique visit identifier
     exam_id=3,                    # Exam number
-    folder_name="raw",            # Main folder type (e.g., "raw", "processed")
+    folder_name="raw",            # Main folder type (e.g., "raw", "extracted")
     source_path="sample_data"     # Optional: source directory to copy files from
 )
 ```
